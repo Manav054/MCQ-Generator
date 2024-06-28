@@ -6,5 +6,5 @@ setup(
     author = "Manav Baldewa",
     author_email = "manavbaldewa2001@gmail.com",
     install_requires = ["ai21", "langchain", "stramlit", "python-dotenv", "pyPDF2"],
-    pachages = find_packages()
+    packages = find_packages()
 )
