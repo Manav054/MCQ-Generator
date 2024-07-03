@@ -1,4 +1,4 @@
-ai21
+langchain-groq
 langchain
 langchain_community
 streamlit

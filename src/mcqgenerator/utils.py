@@ -21,7 +21,6 @@ def read_file(file):
 def get_table_data(quiz_str):
     try:
         quiz = json.loads(quiz_str)
-        print(quiz)
         quiz_table_data = []
         for key, value in quiz.items():
             mcq = value["mcq"]

@@ -7,18 +7,15 @@ from src.mcqgenerator.utils import read_file, get_table_data
 from src.mcqgenerator.logger import logging
 
 # Importing required packages
-from langchain_ai21 import ChatAI21
+from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 
 # Loading all environment variables
 load_dotenv()
 
-# Getting the api key
-os.environ["AI21_API_KEY"] = os.getenv("AI21_API_KEY")
-
 # Initialising the model
-llm = ChatAI21(model = "j2-ultra", temperature = 0.7, max_tokens = 4096)
+llm = ChatGroq(temperature = 0.7, model = "llama3-8b-8192")
 
 # Creating template for the quiz generation prompt
 template = """
