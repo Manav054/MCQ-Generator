@@ -18,9 +18,11 @@ def read_file(file):
     else:
         raise Exception("Unsupported file format... Only pdf and txt file supported!!")
     
-def get_table_data(quiz_str):
+def get_table_data(quiz):
     try:
-        quiz = json.loads(quiz_str)
+        quiz = quiz.strip().splitlines()[1:-1]  # Removes delimiters and empty lines
+        quiz = "".join(quiz)
+        quiz = json.loads(quiz)
         quiz_table_data = []
         for key, value in quiz.items():
             mcq = value["mcq"]

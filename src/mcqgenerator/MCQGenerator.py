@@ -7,7 +7,7 @@ from src.mcqgenerator.utils import read_file, get_table_data
 from src.mcqgenerator.logger import logging
 
 # Importing required packages
-from langchain_groq import ChatGroq
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 
@@ -15,7 +15,7 @@ from langchain.chains import LLMChain, SequentialChain
 load_dotenv()
 
 # Initialising the model
-llm = ChatGroq(temperature = 0.7, model = "llama3-8b-8192")
+llm = ChatGoogleGenerativeAI(temperature = 0.7, model = "gemini-1.5-flash")
 
 # Creating template for the quiz generation prompt
 template = """
